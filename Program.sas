@@ -23,3 +23,11 @@ run;
 proc sort data=pg1.eu_occ(keep=geo country) out=country_list nodupkey;
 	by Geo Country;
 run;
+
+
+/*  */
+data cars_avg;
+	format mpg_mean 5.2;
+	set sashelp.cars;
+	mpg_mean = mean(mpg_city, mpg_highway);
+run;
